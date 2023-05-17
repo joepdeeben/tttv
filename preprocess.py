@@ -38,18 +38,12 @@ VP -> VB NP | VB NP PP
 NP -> DT N | DT NNS
 PP -> IN NP
 
-PRP -> 'it'| 'we'|'you'|'them'|'they'|'They'|'You'
-
-IN -> 'in'|'of'|'for'|'so'|'until'|'after'|'that'|'into'|'while'|'with'|'Once'|'on'|'if'|'over'|'After'|'as'|'For'|'till'|'before'|'tard'|'Boil'|'As'|'from'|'under'|'about'|'If'
-
-VB -> 'Put'| 'be'| 'Make'| 'shape'| 'serve'| 'Place'| 'boil'| 'reduce'| 'Add'| 'Boil'| 'skin'| 'cut'| 'Chop'| 'cook'| 'check'| 'make'| 'separate'| 'let'| 'simmer'| 'Take'| 'soak'| 'set'| 'Beat'| 'return'| 'break'| 'Transfer'| 'fridge'| 'Buy'| 'burn'| 'stir'| 'start'| 'turn'| 'muslin'| 'Wrap'| 'take'| 'prevent'| 'scoop'| 'add'| 'cover'| 'cool'| 'have'| 'dip'| 'finish'| 'Repeat'| 'need'| 'do'| 'pan'
-
-DT -> 'the'|'a'|'all'|'every'|'every'|'this'
-
-NNS -> 'beans'| 'ingredients'| 'carrots'| 'parsnips'| 'minutes'| 'cubes'| 'onions'| 'tomatoes'| 'khoya'| 'balls'| 'cups'| 'hours'| 'sides' | 'crystals'| 'mintures'| 'slices'| 'spoons'| 'boils'| 'cloth'| 'nuts'| 'cristals'| 'flavour'| 'pools'| 'seeds'| 'times'| 'pieces'| 'almonds'| 'pistachios'| 'yolks'| 'fingers'| 'tbsp'| 'layers'| 'mins'| 'batches'
-
-NN -> 'bowl'| 'water'| 'food'| 'processor'| 'bit'| 'powder'| 'spoon'| 'salt'| 'circle'| 'shape'| 'brown'| 'medium'| 'size'| 'mix'| 'oil'| 'frying'| 'pan'| 'mixture'| 'pakoras'| 'batch'| 'onion'| 'potatos'| 'swede'| 'heat'| 'simmer'| 'min'| 'curry'| 'chat'| 'masala'| 'stir'| 'cook'| 'rice'| 'liquid'| 'coriander'| 'cup'| 'fry'| 'fryer'| 'skin'| 'cooked'| 'garlic'| 'wait'| 'chopped'| 'chicken'| 'garam'| 'chilli'| 'corriander'| 'semolina'| 'dough'| 'hour'| '.This'| 'light'| 'spongy'| 'round'| 'image'| 'sugar'| 'syrup'| 'ghee'| 'color'| 'mango'| 'flesh'| 'pro-'| 'cessor'| 'sweetener'| 'yogurt'| 'container'| 'Freeze'| 'base'| 'sorbet'| 'center'| 'fork'| 'freezer'| 'ince'| 'bowls'| 'flour'| 'pinch'| 'kg'| 'plain'| 'bt'| 'cake'| 'half'| 'galen'| 'milk'| 'custard'| 'lemon'| 'juice'| 'bottomed'| 'curd'| 'whey'| 'fat'| 'strainer'| 'line'| 'cloth'| 'muslin'| 'rinse'| 'squeeze'| 'process'| 'sourness'| 'press'| 'paneer'| 'ginger'| 'proof'| 'freeze'| 'ice'| 'cream'| 'garnish'| 'sauce'| 'bring'| 'boil'| 'till'| 'wate'| 'cardamom'| 'kheer' | 'warm'| 'cold'| 'serve'| 'egg'| 'mascarpone'| 'beat'| 'coffee'| 'cacao'| 'batter'| 'top'| 'pone'| 'lady'| 'finger'| 'tbsp'| 'dust'| 'chocolate'| 'ground'| 'potato'| 'stock'| 'tender' | 'taste'| 'reheat'
-
+DT -> 'the' | 'a' | 'all' | 'every' | 'The' | 'this'|
+NNS -> 'beans' | 'bowl' | 'food' | 'garlic' | 'table' | 'salt' | 'circle' | 'oil' | 'pan' | 'onion' | 'potatoes' | 'swede' | 'carrots' | 'parsnips' | 'water' | 'rice' | 'coriander' | 'tomatoes' | 'chicken' | 'semolina' | 'khoya' | 'dough' | 'balls' | 'mango' | 'sweetener' | 'yogurt' | 'container' | 'sorbet' | 'base' | 'mixture' | 'fork' | 'bowls' | 'pinch' | 'salt' | 'flour' | 'custard' | 'galen' | 'milk' | 'lemon' | 'whey' | 'cheese' | 'cloth' | 'ginger' | 'nuts' | 'rice' | 'sugar' | 'cardamom' | 'pistachios' | 'almonds'
+IN ->  'in' | 'of' | 'for' | 'so' | 'until' | 'after' | 'that' | 'into' | 'while' | 'with' | 'Once' | 'on' | 'if' | 'over' | 'After' | 'as' | 'For' | 'till' | 'before' | 'tard' | 'Boil' | 'As' | 'from' | 'under' | 'about' | 'If'
+VB -> 'leave' | 'add' | 'make' | 'fry' | 'mix' | 'heat' | 'simmer' | 'stir' | 'cook' | 'boil' | 'reduce' | 'check' | 'blend' | 'freeze' | 'beat' | 'scoop' | 'fill' | 'bring' | 'put' | 'separate' | 'beat' | 'pour' | 'turn' | 'wrap' | 'rinse' | 'squeeze' | 'transfer'
+CC -> 'and'| 'or'| 'but'
+RP -> 'up'| 'off'| 'out'|
 
 """)
 
