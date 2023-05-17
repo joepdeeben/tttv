@@ -34,8 +34,9 @@ for category in categories:
 
 grammar = CFG.fromstring("""
 S -> VP
-VP -> VB NP | VB
-NP -> IN DT NN VB | IN DT NN VB PP
+VP -> VB NP | VB NP PP
+NP -> DT N | DT NNS
+PP -> IN NP
 
 PRP -> 'it'| 'we'|'you'|'them'|'they'|'They'|'You'
 
