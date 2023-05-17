@@ -33,7 +33,7 @@ for category in categories:
             words_checked.append(word)
 
 grammar = CFG.fromstring("""
-S -> NP VP
+S -> VP
 VP -> VB NN | VB NN PP | VB NNS | VB NNS PP
 PP -> IN NN | IN NNS
 NP -> IN DT NN VB | IN DT NN VB PP
