@@ -34,8 +34,7 @@ for category in categories:
 
 grammar = CFG.fromstring("""
 S -> VP
-VP -> VB NN | VB NN PP | VB NNS | VB NNS PP
-PP -> IN NN | IN NNS
+VP -> VB NP | VB
 NP -> IN DT NN VB | IN DT NN VB PP
 
 PRP -> 'it'| 'we'|'you'|'them'|'they'|'They'|'You'
@@ -46,9 +45,9 @@ VB -> 'Put'| 'be'| 'Make'| 'shape'| 'serve'| 'Place'| 'boil'| 'reduce'| 'Add'| '
 
 DT -> 'the'|'a'|'all'|'every'|'every'|'this'
 
-NNS -> 'beans'| 'ingredients'| 'carrots'| 'parsnips'| 'minutes'| 'cubes'| 'onions'| 'tomatoes'| 'khoya'| 'balls'| 'cups'| 'hours'| 'sides'| 'â€'| 'crystals'| 'mintures'| 'slices'| 'spoons'| 'boils'| 'cloth'| 'nuts'| 'cristals'| 'flavour'| 'pools'| 'seeds'| 'times'| 'pieces'| 'almonds'| 'pistachios'| 'yolks'| 'fingers'| 'tbsp'| 'layers'| 'mins'| 'batches'
+NNS -> 'beans'| 'ingredients'| 'carrots'| 'parsnips'| 'minutes'| 'cubes'| 'onions'| 'tomatoes'| 'khoya'| 'balls'| 'cups'| 'hours'| 'sides' | 'crystals'| 'mintures'| 'slices'| 'spoons'| 'boils'| 'cloth'| 'nuts'| 'cristals'| 'flavour'| 'pools'| 'seeds'| 'times'| 'pieces'| 'almonds'| 'pistachios'| 'yolks'| 'fingers'| 'tbsp'| 'layers'| 'mins'| 'batches'
 
-NN -> 'bowl'| 'water'| 'food'| 'processor'| 'bit'| 'powder'| 'spoon'| 'salt'| 'circle'| 'shape'| 'brown'| 'medium'| 'size'| 'mix'| 'oil'| 'frying'| 'pan'| 'mixture'| 'pakoras'| 'batch'| 'onion'| 'potatos'| 'swede'| 'heat'| 'simmer'| 'min'| 'curry'| 'chat'| 'masala'| 'stir'| 'cook'| 'rice'| 'liquid'| 'coriander'| 'cup'| 'fry'| 'fryer'| 'skin'| 'cooked'| 'garlic'| 'wait'| 'chopped'| 'chicken'| 'garam'| 'chilli'| 'corriander'| 'semolina'| 'dough'| 'hour'| '.This'| 'light'| 'spongy'| 'round'| 'image'| 'sugar'| 'syrup'| 'ghee'| 'color'| 'mango'| 'flesh'| 'pro-'| 'cessor'| 'sweetener'| 'yogurt'| 'container'| 'Freeze'| 'base'| 'sorbet'| 'center'| 'fork'| 'freezer'| 'ince'| 'bowls'| 'flour'| 'pinch'| 'kg'| 'plain'| 'bt'| 'cake'| 'half'| 'galen'| 'milk'| 'custard'| 'lemon'| 'juice'| 'bottomed'| 'curd'| 'whey'| 'fat'| 'strainer'| 'line'| 'cloth'| 'muslin'| 'rinse'| 'squeeze'| 'process'| 'sourness'| 'press'| 'paneer'| 'ginger'| 'proof'| 'freeze'| 'ice'| 'cream'| 'garnish'| 'sauce'| 'bring'| 'boil'| 'till'| 'wate'| 'cardamom'| 'kheer'| 'ou'| 'warm'| 'cold'| 'serve'| 'egg'| 'mascarpone'| 'beat'| 'coffee'| 'cacao'| 'batter'| 'top'| 'pone'| 'lady'| 'finger'| 'tbsp'| 'dust'| 'chocolate'| 'ground'| 'potato'| 'stock'| 'tender'| 'der'| 'taste'| 'reheat'
+NN -> 'bowl'| 'water'| 'food'| 'processor'| 'bit'| 'powder'| 'spoon'| 'salt'| 'circle'| 'shape'| 'brown'| 'medium'| 'size'| 'mix'| 'oil'| 'frying'| 'pan'| 'mixture'| 'pakoras'| 'batch'| 'onion'| 'potatos'| 'swede'| 'heat'| 'simmer'| 'min'| 'curry'| 'chat'| 'masala'| 'stir'| 'cook'| 'rice'| 'liquid'| 'coriander'| 'cup'| 'fry'| 'fryer'| 'skin'| 'cooked'| 'garlic'| 'wait'| 'chopped'| 'chicken'| 'garam'| 'chilli'| 'corriander'| 'semolina'| 'dough'| 'hour'| '.This'| 'light'| 'spongy'| 'round'| 'image'| 'sugar'| 'syrup'| 'ghee'| 'color'| 'mango'| 'flesh'| 'pro-'| 'cessor'| 'sweetener'| 'yogurt'| 'container'| 'Freeze'| 'base'| 'sorbet'| 'center'| 'fork'| 'freezer'| 'ince'| 'bowls'| 'flour'| 'pinch'| 'kg'| 'plain'| 'bt'| 'cake'| 'half'| 'galen'| 'milk'| 'custard'| 'lemon'| 'juice'| 'bottomed'| 'curd'| 'whey'| 'fat'| 'strainer'| 'line'| 'cloth'| 'muslin'| 'rinse'| 'squeeze'| 'process'| 'sourness'| 'press'| 'paneer'| 'ginger'| 'proof'| 'freeze'| 'ice'| 'cream'| 'garnish'| 'sauce'| 'bring'| 'boil'| 'till'| 'wate'| 'cardamom'| 'kheer' | 'warm'| 'cold'| 'serve'| 'egg'| 'mascarpone'| 'beat'| 'coffee'| 'cacao'| 'batter'| 'top'| 'pone'| 'lady'| 'finger'| 'tbsp'| 'dust'| 'chocolate'| 'ground'| 'potato'| 'stock'| 'tender' | 'taste'| 'reheat'
 
 
 """)
