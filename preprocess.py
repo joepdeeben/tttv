@@ -57,5 +57,3 @@ length = int(input("how deep should the generation be? \n"))
 for sentence in generate(grammar, depth=length):
     print(' '.join(sentence))
 
-print(categories)
-print(tagged)
