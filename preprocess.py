@@ -35,10 +35,12 @@ for category in categories:
 
 grammar = CFG.fromstring("""
 S -> VP
-VP -> VB NP | VB NP PP
-NP -> DT N | DT NNS
-PP -> IN NP
 
+VP -> VB | VB NP | VB PP | VB NP PP | VB NP CC VP | VB PP CC VP
+
+NP -> DT N | DT NNS | DT N RP
+
+PP -> IN NP | IN NP PP | IN NP CC PP
 DT -> 'the' | 'a' | 'all' | 'every' | 'The' | 'this'|
 NNS -> 'bean' | 'food' | 'garlic' | 'table' | 'salt' | 'circle' | 'oil' | 'pan' | 'onion' | 'potato' | 'swede' | 'carrot' | 'parsnip' | 'water' | 'rice' | 'coriander' | 'tomato' | 'chicken' | 'semolina' | 'khoya' | 'dough' | 'ball' | 'mango' | 'sweetener' | 'yogurt' | 'container' | 'sorbet' | 'base' | 'mixture' | 'fork' | 'bowl' | 'pinch' | 'salt' | 'flour' | 'custard' | 'galen' | 'milk' | 'lemon' | 'whey' | 'cheese' | 'cloth' | 'ginger' | 'nut' | 'rice' | 'sugar' | 'cardamom' | 'pistachio' | 'almond'
 IN ->  'in' | 'of' | 'for' | 'so' | 'until' | 'after' | 'that' | 'into' | 'while' | 'with' | 'Once' | 'on' | 'if' | 'over' | 'After' | 'as' | 'For' | 'till' | 'before' | 'tard' | 'Boil' | 'As' | 'from' | 'under' | 'about' | 'If'
