@@ -3,6 +3,7 @@ from nltk import word_tokenize
 from nltk import pos_tag
 from nltk import CFG
 from nltk.parse.generate import generate
+import random
 
 f = open('corpus.txt', 'r')
 raw = f.readlines()
@@ -47,7 +48,14 @@ RP -> 'up'| 'off'| 'out'|
 
 """)
 
-length = int(input("how deep should the generation be? \n"))
-for sentence in generate(grammar, depth=length):
-    print(' '.join(sentence))
+def generate_sentence(grammar, symbol):
+    if isinstance(symbol, str):
+        productions = grammar.productions(lhs=symbol)
+        production = random.choice(productions)
+        return ' '.join(generate_sentence(grammar, sym) for sym in production.rhs())
+    else:
+        return 'bruh'
 
+# Generate a sentence using the CFG
+generated_sentence = generate_sentence(grammar, grammar.start())
+print(generated_sentence)
