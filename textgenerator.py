@@ -63,5 +63,13 @@ def generate_vp(vb, np, pp):
     else:
         return random.choice(vb) + SPACE + np
 
+def generate_sentences(amount):
+    sentences = []
+    for i in range(amount):
+        sentence = generate_vp(vb_list, generate_pp(in_list, generate_np(dt_list, nns_list, n_list)), generate_np(dt_list, nns_list, n_list))
+        sentences.append(sentence)
+    return sentences
 
-print(generate_vp(vb_list, generate_pp(in_list, generate_np(dt_list, nns_list, n_list)), generate_np(dt_list, nns_list, n_list)))
+sentences = generate_sentences(200)
+for sentence in sentences:
+    print(sentence)
