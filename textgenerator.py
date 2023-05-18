@@ -42,12 +42,16 @@ cc_list = extract_word_categories(grammar, 'CC')
 rp_list = extract_word_categories(grammar, 'RP')
 n_list = extract_word_categories(grammar, 'N')
 
+# Generates a random NP, using one of the two rules, based on  a random number
 def generate_np(dt, nns, n):
     random_number = random.randint(1, 2)
     if random_number == 1:
-        return random.choice(dt) + ' ' + random.choice(n), 'I chose DT N'
+        return random.choice(dt) + ' ' + random.choice(n)
     else:
-        return random.choice(dt) + ' ' + random.choice(nns), 'I chose DT NNS'
+        return random.choice(dt) + ' ' + random.choice(nns)
 
-print(generate_np(dt_list, nns_list, n_list))
-#def generate_pp(in_list, np)
+# Generates a random PP
+def generate_pp(in_words, np):
+    return random.choice(in_words) + ' ' + np
+
+print(generate_pp(in_list, generate_np(dt_list, nns_list, n_list)))
