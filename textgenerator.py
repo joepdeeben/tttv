@@ -5,34 +5,6 @@ from nltk import CFG
 from nltk.parse.generate import generate
 import random
 
-f = open('corpus.txt', 'r')
-raw = f.readlines()
-rawstr = ''
-
-
-for sentence in raw:
-    rawstr += sentence.strip('\n') + " "
-
-tokenized = word_tokenize(rawstr)
-tagged = pos_tag(tokenized)
-
-#creëer de verschillende categorieën
-categories = []
-for word in tagged:
-    if word[1] in categories:
-        pass
-    else:
-        categories.append(word[1])
-
-#woorden categoriseren, dit is puur voor ons om een overzicht te geven
-words_checked = []
-for category in categories:
-    print(category, '->')
-    for word in tagged:
-        if (word[1] == category) and word not in words_checked:
-            print(f"'{word[0]}'|" )
-            words_checked.append(word)
-
 grammar = CFG.fromstring("""
 S -> VP
 VP -> VB NP | VB NP PP
@@ -44,18 +16,38 @@ NNS -> 'bean' | 'food' | 'garlic' | 'table' | 'salt' | 'circle' | 'oil' | 'pan' 
 IN ->  'in' | 'of' | 'for' | 'so' | 'until' | 'after' | 'that' | 'into' | 'while' | 'with' | 'Once' | 'on' | 'if' | 'over' | 'After' | 'as' | 'For' | 'till' | 'before' | 'tard' | 'Boil' | 'As' | 'from' | 'under' | 'about' | 'If'
 VB -> 'leave' | 'add' | 'make' | 'fry' | 'mix' | 'heat' | 'simmer' | 'stir' | 'cook' | 'boil' | 'reduce' | 'check' | 'blend' | 'freeze' | 'beat' | 'scoop' | 'fill' | 'bring' | 'put' | 'separate' | 'beat' | 'pour' | 'turn' | 'wrap' | 'rinse' | 'squeeze' | 'transfer'
 CC -> 'and'| 'or'| 'but'
-RP -> 'up'| 'off'| 'out'|
+RP -> 'up'| 'off'| 'out'
+N -> 'bruh' | 'test'
 
 """)
 
-def generate_sentence(grammar, symbol):
-    if isinstance(symbol, str):
-        productions = grammar.productions(lhs=symbol)
-        production = random.choice(productions)
-        return ' '.join(generate_sentence(grammar, sym) for sym in production.rhs())
-    else:
-        return 'bruh'
+# Extracts all the words from a certain category and puts it into a list
+def extract_word_categories(grammar, symbol):
+    word_categories = {}
 
-# Generate a sentence using the CFG
-generated_sentence = generate_sentence(grammar, grammar.start())
-print(generated_sentence)
+    for production in grammar.productions():
+        if production.lhs().symbol() in word_categories:
+            word_categories[production.lhs().symbol()].extend(production.rhs())
+        else:
+            word_categories[production.lhs().symbol()] = list(production.rhs())
+
+    return word_categories.get(symbol, [])
+
+# All variables turned into list
+dt_list = extract_word_categories(grammar, 'DT')
+nns_list = extract_word_categories(grammar, 'NNS')
+in_list = extract_word_categories(grammar, 'IN')
+vb_list = extract_word_categories(grammar, 'VB')
+cc_list = extract_word_categories(grammar, 'CC')
+rp_list = extract_word_categories(grammar, 'RP')
+n_list = extract_word_categories(grammar, 'N')
+
+def generate_np(dt, nns, n):
+    random_number = random.randint(1, 2)
+    if random_number == 1:
+        return random.choice(dt) + ' ' + random.choice(n), 'I chose DT N'
+    else:
+        return random.choice(dt) + ' ' + random.choice(nns), 'I chose DT NNS'
+
+print(generate_np(dt_list, nns_list, n_list))
+#def generate_pp(in_list, np)
