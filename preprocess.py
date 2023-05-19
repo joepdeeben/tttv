@@ -50,7 +50,7 @@ CLOSE -> ')'
 # Initialize the parser with the grammar
 parser = RecursiveDescentParser(grammar)
 
-# Iterate over each sentence in the corpus
+# Iterate over each sentence in our corpus
 for sentence in sentences:
     # Tokenize the input sentence
     tokenized_sentence = word_tokenize(sentence)
