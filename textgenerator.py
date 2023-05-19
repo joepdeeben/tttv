@@ -26,8 +26,7 @@ PDT -> 'all'
 NNP -> 'Fry' | 'Heat' | 'Cover' | 'Serve' | 'Place' | 'Add' | 'Cook' | 'Mix' | 'Keep' | 'Saffron' | 'Sugar' | 'Blend' | 'smooth' | 'Pour' | 'Halph' | 'Fill' | 'Stir' | 'Seperate' | 'Tip' | 'Return'
 JJS -> 'most'
 JJR -> 'more' | 'lower'
-( -> '('
-) -> ')'
+
 """)
 
 
