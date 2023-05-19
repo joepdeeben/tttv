@@ -106,6 +106,6 @@ def generate_sentences(amount):
         sentences.append(sentence)
     return sentences
 
-sentences = generate_sentences(200)
+sentences = generate_sentences(50)
 for sentence in sentences:
     print(sentence)
