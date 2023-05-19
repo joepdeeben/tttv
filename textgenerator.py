@@ -106,5 +106,6 @@ def generate_sentences(amount):
     return sentences
 
 sentences = generate_sentences(50)
-for sentence in sentences:
-    print(sentence)
+with open('zinnen.txt', 'w') as zinnen:
+    for sentence in sentences:
+        zinnen.write(sentence + '\n')
