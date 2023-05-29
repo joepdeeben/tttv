@@ -47,6 +47,8 @@ OPEN -> '('
 CLOSE -> ')'
 """)
 
+i = 0
+j = 0
 # Initialize the parser with the grammar
 parser = RecursiveDescentParser(grammar)
 
@@ -66,11 +68,15 @@ for sentence in sentences:
 
         # Translate the parse tree
         translation = ' '.join(node.label() for node in parse_tree if isinstance(node, nltk.Tree))
-
+        
+        
         # Print the result
         print("Sentence:", sentence.strip())
         print("Translation:", translation)
+        i += 1
     except StopIteration:
         print("No parse tree found for sentence:", sentence.strip())
-
+        j += 1
     print()
+print('Goeie zinnen: ', + i)
+print('Foute zinnen: ', + j)
