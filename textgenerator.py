@@ -61,51 +61,54 @@ jjs_list = extract_word_categories(grammar, 'JJS')
 jjr_list = extract_word_categories(grammar, 'JJR')
 
 # Generates a random NP, using one of the rules, based on a random number
-def generate_np(dt, nns, jj, jjs, jjr):
+def generate_np():
     random_number = random.randint(1, 7)
     if random_number == 1:
-        return random.choice(dt) + ' ' + random.choice(jj) + ' ' + random.choice(nns)
+        return random.choice(dt_list) + ' ' + random.choice(jj_list) + ' ' + random.choice(nns_list)
     elif random_number == 2:
-        return random.choice(dt) + ' ' + random.choice(md_list) + ' ' + random.choice(nns)
+        return random.choice(dt_list) + ' ' + random.choice(md_list) + ' ' + random.choice(nns_list)
     elif random_number == 3:
-        return random.choice(dt) + ' ' + random.choice(jj) + ' ' + random.choice(nns) + ' ' + random.choice(cc_list) + ' ' + generate_np(dt, nns, jj, jjs, jjr)
+        return random.choice(dt_list) + ' ' + random.choice(jj_list) + ' ' + random.choice(nns_list) + ' ' + random.choice(cc_list) + ' ' + generate_np()
     elif random_number == 4:
-        return random.choice(dt) + ' ' + random.choice(nns) + ' ' + random.choice(cc_list) + ' ' + generate_np(dt, nns, jj, jjs, jjr)
+        return random.choice(dt_list) + ' ' + random.choice(nns_list) + ' ' + random.choice(cc_list) + ' ' + generate_np()
     elif random_number == 5:
-        return random.choice(dt) + ' ' + random.choice(cd_list) + ' ' + random.choice(nns)
+        return random.choice(dt_list) + ' ' + random.choice(cd_list) + ' ' + random.choice(nns_list)
     elif random_number == 6:
-        return random.choice(dt) + ' ' + random.choice(jjs) + ' ' + random.choice(nns)
+        return random.choice(dt_list) + ' ' + random.choice(jjs_list) + ' ' + random.choice(nns_list)
     elif random_number == 7:
-        return random.choice(dt) + ' ' + random.choice(jjr_list) + ' ' + random.choice(nnp_list)
+        return random.choice(dt_list) + ' ' + random.choice(jjr_list) + ' ' + random.choice(nnp_list)
 
 # Generates a random PP or an adverb
-def generate_pp(in_words, np):
+def generate_pp():
     random_number = random.randint(1, 2)
     if random_number == 1:
-        return random.choice(in_words) + ' ' + np
+        return random.choice(in_list) + ' ' + generate_np()
     elif random_number == 2:
         return random.choice(rb_list)
 
 # Generates a random VP, using one of the rules, based on a random number
-def generate_vp(vb, np, pp):
+def generate_vp():
     random_number = random.randint(1, 4)
     if random_number == 1:
-        return random.choice(vb) + ' ' + np
+        return random.choice(vb_list) + ' ' + generate_np()
     elif random_number == 2:
-        return random.choice(vb) + ' ' + np + ' ' + pp
+        return random.choice(vb_list) + ' ' + generate_np() + ' ' + generate_pp()
     elif random_number == 3:
-        return random.choice(vb) + ' ' + np + ' ' + random.choice(cc_list) + ' ' + generate_vp(vb, np, pp)
+        return random.choice(vb_list) + ' ' + generate_np() + ' ' + random.choice(cc_list) + ' ' + generate_vp()
     elif random_number == 4:
-        return random.choice(vb) + ' ' + random.choice(prp_list) + ' ' + random.choice(rp_list)
+        return random.choice(vb_list) + ' ' + random.choice(prp_list) + ' ' + random.choice(rp_list)
 
 def generate_sentences(amount):
     sentences = []
     for _ in range(amount):
-        sentence = generate_vp(vb_list, generate_np(dt_list, nns_list, jj_list, jjs_list, jjr_list), generate_pp(in_list, generate_np(dt_list, nns_list, jj_list, jjs_list, jjr_list)))
+        sentence = generate_vp()
         sentences.append(sentence)
     return sentences
 
+
 sentences = generate_sentences(50)
-with open('zinnen.txt', 'w') as zinnen:
-    for sentence in sentences:
-        zinnen.write(sentence + '\n')
+for sentence in sentences:
+    print(sentence)
+# with open('zinnen.txt', 'w') as zinnen:
+#     for sentence in sentences:
+#         zinnen.write(sentence + '\n')
