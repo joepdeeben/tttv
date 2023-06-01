@@ -198,6 +198,10 @@ for symbol, production in productions:
     grammar[symbol] = production
 
 # Generate 5 sentences
-sentences = generate_sentences(grammar, start_symbol, 50)
-for sentence in sentences:
-    print(sentence)
+with open('zinnen.txt', 'w') as file:
+    count = 1
+    for i in range(50):
+        sentences = generate_sentences(grammar, start_symbol, 1)
+        for sentence in sentences:
+            file.write(str(count) + ' '+ sentence + '\n\n')
+        count += 1
