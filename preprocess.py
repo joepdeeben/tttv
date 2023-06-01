@@ -23,20 +23,20 @@ S -> SBAR VP
 S -> ADJP
 S -> ADVP
 
-VP -> VB NP PP SBAR | VB NP PP | VB VBD PP | VB IN JJ | VB IN CD | VB PRP IN | MD VP | VB JJ | VP CC VP | VB | VP CC NP | VB S | VB CC VB PP SBAR | VBN | VBZ VP | MD VP | VB NP | VB S | TO VP | VB COMMA VP | VBD S | VP ADVP | VBP ADJP | VBP NP
-NP -> DT NNS | DT NN | NN | NNS | DT NNS PP | JJ NN | JJ NNS | CD NNS | PRP | NP PP | PDT DT NNS | NP CC NP| DT JJ NN NN | JJR NN | CD NN | DT NN NN | DT | NP SBAR
-PP -> IN NP | JJ IN NP
+VP -> VB NP PP SBAR | VB NP PP | VB VBD PP | VB IN JJ | VB IN CD | VB PRP IN | MD VP | VB JJ | VP CC VP | VB | VP CC NP | VB S | VB CC VB PP SBAR | VBN | VBZ VP | MD VP | VB NP | VB S | TO VP | VB COMMA VP | VBD S | VP ADVP | VBP ADJP | VBP NP | VBZ NP | VBZ RP NP | VB SBAR
+NP -> DT NNS | DT NN | NN | NNS | DT NNS PP | JJ NN | JJ NNS | CD NNS | PRP | NP PP | PDT DT NNS | NP CC NP| DT JJ NN NN | JJR NN | CD NN | DT NN NN | DT | NP SBAR | NN NN | DT NN JJ NN
+PP -> IN NP | JJ IN NP | IN NP ADJP PRN
 SBAR -> IN S | WRB S | S
-ADJP -> JJ | ADJP CC ADJP | JJ PP
+ADJP -> JJ | ADJP CC ADJP | JJ PP | VBN
 ADVP -> RB
-
+PRN -> OPEN S CLOSE
 
 
 DT -> 'the' | 'a' | 'all' | 'Every' | 'every' | 'The' | 'This' | 'this' | 'that'
 VB ->  'leave' | 'attain' | 'Return' | 'reheat' | 'Tip' | 'Seperate' | 'Stir' | 'Fill' | 'Pour' | 'Blend' | 'Keep' | 'Mix' | 'Cook' | 'Serve' | 'Cover' | 'Heat' | 'Fry' | 'Put'| 'be'| 'Make'| 'shape'| 'serve'| 'Place'| 'boil'| 'reduce'| 'Add'| 'Boil'| 'skin'| 'cut'| 'Chop'| 'cook'| 'check'| 'make'| 'separate'| 'let'| 'simmer'| 'Take'| 'soak'| 'set'| 'Beat'| 'return'| 'break'| 'Transfer'| 'fridge'| 'Buy'| 'burn'| 'stir'| 'start'| 'turn'| 'muslin'| 'Wrap'| 'take'| 'prevent'| 'scoop'| 'add'| 'cover'| 'cool'| 'have'| 'dip'| 'finish'| 'Repeat'| 'need'| 'do'| 'pan'
 NNS ->  'mins' | 'gallon' | 'cheese' | 'beans'| 'hours'| 'ingredients'| 'carrots'| 'parsnips'| 'minutes'| 'cubes'| 'onions'| 'tomatoes'| 'khoya'| 'balls'| 'cups'| 'sides'| 'crystals'| 'mintures'| 'slices'| 'spoons'| 'boils'| 'cloth'| 'nuts'| 'cristals'| 'flavour'| 'pools'| 'seeds'| 'times'| 'pieces'| 'almonds'| 'pistachios'| 'yolks'| 'fingers'| 'tbsp'| 'layers'| 'mins'| 'batches'
 IN -> 'in'| 'of'| 'for'| 'so'| 'until'| 'after'| 'that'| 'into'| 'while'| 'with'| 'Once'| 'on'| 'if'| 'over'| 'After'| 'as'| 'For'| 'till'| 'before'| 'tard'| 'Boil'| 'As'| 'from'| 'under'| 'about'| 'If'
-NN -> 'mix' | 'Sugar' | 'Cardamom'| 'Saffron' | 'Gulab' | 'Jamun' | 'bowl' | 'food'| 'processor'| 'bit'| 'powder'| 'spoon'| 'salt'| 'circle'| 'shape'| 'brown'| 'medium'| 'size'| 'mix'| 'oil'| 'frying'| 'pan'| 'mixture'| 'pakoras'| 'batch'| 'onion'| 'potatos'| 'swede'| 'heat'| 'simmer'| 'min'| 'curry'| 'chat'| 'masala'| 'stir'| 'cook'| 'rice'| 'liquid'| 'coriander'| 'cup'| 'fry'| 'fryer'| 'skin'| 'cooked'| 'garlic'| 'wait'| 'chopped'| 'chicken'| 'garam'| 'chilli'| 'corriander'| 'semolina'| 'dough'| 'hour'| 'light'| 'spongy'| 'round'| 'image'| 'sugar'| 'syrup'| 'ghee'| 'color'| 'mango'| 'flesh'| 'processor'| 'sweetener'| 'yogurt'| 'container'| 'Freeze'| 'base'| 'sorbet'| 'center'| 'fork'| 'freezer'| 'ice'| 'bowls'| 'flour'| 'pinch'| 'kg'| 'plain'| 'bt'| 'cake'| 'half'| 'galen'| 'milk'| 'custard'| 'lemon'| 'juice'| 'bottomed'| 'curd'| 'whey'| 'fat'| 'strainer'| 'line'| 'cloth'| 'muslin'| 'rinse'| 'squeeze'| 'process'| 'sourness'| 'press'| 'paneer'| 'ginger'| 'proof'| 'freeze'| 'ice'| 'cream'| 'garnish'| 'sauce'| 'bring'| 'boil'| 'till'| 'water'| 'cardamom'| 'kheer' | 'warm'| 'cold'| 'serve'| 'egg'| 'mascarpone'| 'beat'| 'coffee'| 'cacao'| 'batter'| 'top'| 'pone'| 'lady'| 'finger'| 'tbsp'| 'dust'| 'chocolate'| 'ground'| 'potato'| 'stock'| 'tender'|  'taste'
+NN -> 'mix' | 'Sugar' | 'Cardamom'| 'Saffron' | 'Gulab' | 'Jamun' | 'bowl' | 'food' | 'processor' | 'bit' | 'powder'| 'spoon'| 'salt'| 'circle'| 'shape'| 'brown'| 'medium'| 'size'| 'mix'| 'oil'| 'frying'| 'pan'| 'mixture'| 'pakoras'| 'batch'| 'onion'| 'potatos'| 'swede'| 'heat'| 'simmer'| 'min'| 'curry'| 'chat'| 'masala'| 'stir'| 'cook'| 'rice'| 'liquid'| 'coriander'| 'cup'| 'fry'| 'fryer'| 'skin'| 'cooked'| 'garlic'| 'wait'| 'chopped'| 'chicken'| 'garam'| 'chilli'| 'corriander'| 'semolina'| 'dough'| 'hour'| 'light'| 'spongy'| 'round'| 'image'| 'sugar'| 'syrup'| 'ghee'| 'color'| 'mango'| 'flesh'| 'processor'| 'sweetener'| 'yogurt'| 'container'| 'Freeze'| 'base'| 'sorbet'| 'center'| 'fork'| 'freezer'| 'ice'| 'bowls'| 'flour'| 'pinch'| 'kg'| 'plain'| 'bt'| 'cake'| 'half'| 'galen'| 'milk'| 'custard'| 'lemon'| 'juice'| 'bottomed'| 'curd'| 'whey'| 'fat'| 'strainer'| 'line'| 'cloth'| 'muslin'| 'rinse'| 'squeeze'| 'process'| 'sourness'| 'press'| 'paneer' | 'table' | 'ginger'| 'proof'| 'freeze'| 'ice'| 'cream'| 'garnish'| 'sauce'| 'bring'| 'boil'| 'till'| 'water'| 'cardamom'| 'kheer' | 'warm'| 'cold'| 'serve'| 'egg'| 'mascarpone'| 'beat'| 'coffee'| 'cacao'| 'batter'| 'top'| 'pone'| 'lady'| 'finger'| 'tbsp'| 'dust'| 'chocolate'| 'ground'| 'potato'| 'stock'| 'tender'|  'taste'
 COMMA -> ','
 CC -> 'and'| 'or'| 'but' | '/' | '-' | 'so' 
 VBP -> 'leave'| 'become' | 'add'| 'want'| 'are'| 'do'| 'make'| 'attains'| 'have'| 'mix'| 'drain'
@@ -50,7 +50,7 @@ VBG -> 'heating'| 'boiling'| 'bring'| 'stirring'| 'making'| 'beating'| 'scooping
 TO -> 'to'| 'To'
 VBD -> 'put'| 'sprinkled'| 'garnished'| 'chopped'| 'boiled'| 'reduced'| 'broke'| 'blitz' | 'smooth'
 RB -> 'then'| 'often'| 'together'| 'brown'| 'thoroughly'| 'carefully'| 'very'| 'Immediately'| 'still'| 'aside'| 'occasionally'| 'not'| 'gradually'| 'gently'| 'well'| 'put'| 'only'| 'milk'| 'enough'| 'up'| 'again'| 'also'| 'Then'| 'quickly'
-VBN -> 'put'| 'cooked'| 'been'| 'absorbed'| 'dried'| 'stir'| 'shown'| 'started'| 'separated'| 'done'| 'kheer'| 'softened'
+VBN -> 'put'| 'cooked'| 'been'| 'absorbed'| 'dried'| 'stir'| 'shown'| 'started'| 'separated'| 'done' | 'softened' | 'mashed'
 PRPS -> 'their'| 'its' | 'You'
 WRB -> 'When'
 RP -> 'up'| 'off'| 'out' 
