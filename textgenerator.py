@@ -197,31 +197,6 @@ grammar = {}
 for symbol, production in productions:
     grammar[symbol] = production
 
-# Generate 5 sentences
-# with open('zinnen.txt', 'w') as file:
-#     count = 1
-#     for i in range(50):
-#         sentences = generate_sentences(grammar, start_symbol, 1)
-#         for sentence in sentences:
-#             for words in sentence:
-#                 if len(words) > 1:
-#                     file.write(words)
-#                 else:
-#                     file.write(str(count) + ' '+ sentence + '\n\n')
-#         count += 1
-
-# with open('zinnen.txt', 'w') as file:
-#     count = 1
-#     for i in range(50):
-#         sentences = generate_sentences(grammar, start_symbol, 1)
-#         for sentence in sentences:
-#             words = sentence.split()  # Split the sentence into individual words
-#             if len(words) > 1:  # Check if the sentence has more than one word
-#                 for word in words:
-#                     file.write(str(count) + ' ' + word + ' ')
-#                 file.write('\n\n')
-#                 count += 1
-
 with open('zinnen.txt', 'w') as file:
     count = 1
     while count <= 50:
